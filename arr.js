@@ -1,10 +1,10 @@
 function nth_most_rate(arr, n) {
     const countingMap = {};
-  
+  // Counting the frequency of each element in the array
     arr.forEach(num => {
       countingMap[num] = (countingMap[num] || 0) + 1;
     });
-  
+  // Sort the items based on their frequency in ascending order
     const sortedList = Object.entries(countingMap).sort((a, b) => a[1] - b[1]);
   
 
@@ -12,7 +12,7 @@ function nth_most_rate(arr, n) {
       
       return parseInt(sortedList[n - 1][0]);
     } else {
-      return null; 
+      return null; // return null if n is out of range
     }
   }
   
